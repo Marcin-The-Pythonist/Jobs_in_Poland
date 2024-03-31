@@ -1,10 +1,10 @@
 <h1>How to use</h1>
-1. Download both files
-2. import graph from Gryfino_jobs
-3. Call graph function
-<h3>Dependencies:</h3>
-- matplotlib.pyplot
-- seaborn
-- pandas
-- bs4(beautifulsoup)
+1. Download both files<br>
+2. import graph from Gryfino_jobs<br>
+3. Call graph function<br>
+<h3>Dependencies:</h3><br>
+- matplotlib.pyplot<br>
+- seaborn<br>
+- pandas<br>
+- bs4(beautifulsoup)<br>
 - requests
