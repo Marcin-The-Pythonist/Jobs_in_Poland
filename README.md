@@ -4,9 +4,8 @@
 3. Call graph function<br>
 <h3>Dependencies:</h3>
 <ul>
-  <li>*matplotlib.pyplot<br></li>
-  * seaborn<br>
-  * pandas<br>
-  * bs4(beautifulsoup)<br>
-  * requests
-  </ul>
+   <li>Pandas</li>
+   <li>Seaborn</li>
+   <li>matplotlib</li>
+   <li>requests</li>
+   <li>beautifulsoup</li>
