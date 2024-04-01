@@ -1,42 +1,52 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd 
-from googletrans import Translator
 
-translator = Translator()
-def scrape_data(lang):
-    """
-    Scrape data from OLX sites about jobs in Gryfino. 
-    """
-    raw_data = requests.get('https://www.olx.pl/praca/gryfino/')
-    html_data = BeautifulSoup(raw_data.text,'html.parser')
-    job_name = html_data.select('.css-1bdi9t1')
+def scrape_data(lang,city):
+    try:
+        """
+        Scrape data from OLX sites about jobs in the city selected. 
+        """
+        raw_data = requests.get('https://www.olx.pl/praca/' + city + '/')
+        html_data = BeautifulSoup(raw_data.text,'html.parser')
+        job_name = html_data.select('.css-1bdi9t1')
 
 
-    if lang == 'pl':
-        list_of_jobs = []
+        if lang == 'pl':
+            list_of_jobs = []
 
-        for i in range(len(job_name)):
-            list_of_jobs.append(job_name[i].text)
+            for i in range(len(job_name)):
+                list_of_jobs.append(job_name[i].text)
+            number_of_jobs = []
+            for item in list_of_jobs:
+                if item[-3:].isdigit():
+                    number_of_jobs.append(item[-3:])
+                    continue
+                if item[-2:].isdigit():
+                    number_of_jobs.append(item[-2:])
+                    continue
+                if item[-1:].isdigit():
+                    number_of_jobs.append(item[-1:])
 
-        number_of_jobs = []
+            list_of_jobs_trimmed = []
 
-        for item in list_of_jobs:
-            number_of_jobs.append(item[-1])
+            for item in list_of_jobs:
+                if item[-3:].isdigit():
+                    list_of_jobs_trimmed.append(item[:-3])
+                    continue
+                if item[-2:].isdigit():
+                    list_of_jobs_trimmed.append(item[:-2])
+                    continue
+                if item[-1:].isdigit():
+                    list_of_jobs_trimmed.append(item[:-1])
+                
+            data = list(zip(list_of_jobs_trimmed,number_of_jobs)) 
+            df = pd.DataFrame(data,columns=['Job_name','Number_of_Jobs'])
 
-        list_of_jobs_trimmed = []
+            df.to_csv('Praca_w_Gryfinie.csv')
 
-        for item in list_of_jobs:
-            list_of_jobs_trimmed.append(item[:-1])
-
-        data = list(zip(list_of_jobs_trimmed,number_of_jobs)) 
-
-        df = pd.DataFrame(data,columns=['Job_name','Number_of_Jobs'])
-
-        df.to_csv('Praca_w_Gryfinie.csv')
-
-    if lang == 'en':
-        pl = """Administracja biurowa
+        if lang == 'en':
+            pl = """Administracja biurowa
 Badania i rozwój
 Budowa / remonty
 Dostawca, kurier miejski
@@ -75,7 +85,7 @@ Kadra kierownicza
 Praca sezonowa
 Zapraszamy seniorów
 Praca dodatkowa"""
-        en = """office administration
+            en = """office administration
 Research and development
 Construction/renovations
 Delivery person, city courier
@@ -115,29 +125,41 @@ seasonal work
 We welcome seniors
 additional job"""   
 
-        en_list = en.split("\n")
-        pl_list = pl.split("\n")
-        en_dict = dict(zip(pl_list,en_list))
-        print(en_dict)
+            en_list = en.split("\n")
+            pl_list = pl.split("\n")
+            en_dict = dict(zip(pl_list,en_list))
 
-        list_of_jobs = []
+            list_of_jobs = []
 
-        for i in range(len(job_name)):
-            list_of_jobs.append(job_name[i].text)
+            for i in range(len(job_name)):
+                list_of_jobs.append(job_name[i].text)
+            number_of_jobs = []
+            for item in list_of_jobs:
+                if item[-3:].isdigit():
+                    number_of_jobs.append(item[-3:])
+                    continue
+                if item[-2:].isdigit():
+                    number_of_jobs.append(item[-2:])
+                    continue
+                if item[-1:].isdigit():
+                    number_of_jobs.append(item[-1:])
 
-        number_of_jobs = []
+            list_of_jobs_trimmed = []
 
-        for item in list_of_jobs:
-            number_of_jobs.append(item[-1])
+            for item in list_of_jobs:
+                if item[-3:].isdigit():
+                    list_of_jobs_trimmed.append(en_dict.get(item[:-3]))
+                    continue
+                if item[-2:].isdigit():
+                    list_of_jobs_trimmed.append(en_dict.get(item[:-2]))
+                    continue
+                if item[-1:].isdigit():
+                    list_of_jobs_trimmed.append(en_dict.get(item[:-1]))
+                
+            data = list(zip(list_of_jobs_trimmed,number_of_jobs)) 
+            df = pd.DataFrame(data,columns=['Job_name','Number_of_Jobs'])
 
-        list_of_jobs_trimmed = []
-
-        for item in list_of_jobs:
-            list_of_jobs_trimmed.append(en_dict.get(item[:-1]))
-            print(en_dict.get(item[:-1]))
-
-        data = list(zip(list_of_jobs_trimmed,number_of_jobs)) 
-
-        df = pd.DataFrame(data,columns=['Job_name','Number_of_Jobs'])
-
-        df.to_csv('Praca_w_Gryfinie.csv')
+            df.to_csv('Praca_w_Gryfinie.csv')
+    except:
+        print("Make sure you have enter a proper city name.")
+  
