@@ -11,7 +11,8 @@ def graph(lang,city):
     """
     graph(lang,city)\n
     lang - pl or en\n
-    city - any city in Poland written in english alphabet i.e. ó > o, ś > s etc. \n
+    city - any city in Poland written in english alphabet i.e. ó > o, ś > s etc.\n
+    IMPORTANT:NAME OF THE CITY MUST BE IN POLISH\n
     Generate barplot with the number of jobs per job name
     """
     if lang not in ['en','pl']:
