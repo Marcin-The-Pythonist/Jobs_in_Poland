@@ -26,7 +26,7 @@ def graph(lang,city):
         plt.ylabel('Liczba prac')
         plt.xlabel("Nazwa stanowiska")
         plt.subplots_adjust(bottom=0.4)
-        plt.title(f"Praca w {city}")
+        plt.title(f"Liczba ofert prac ze względu na kategorie - {city}")
         plt.legend([],[], frameon=False)
         plt.savefig(f'Praca_w_{city}.png')
     if lang == 'en':
