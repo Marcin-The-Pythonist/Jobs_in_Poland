@@ -1,7 +1,7 @@
 <h1>How to use</h1>
 1. Download both files<br>
-2. import graph from Gryfino_jobs<br>
-3. Call graph function<br>
+2. import graph function from Jobs_in_poland.py<br>
+3. Call the function with 2 arguments: The language in which the plot will be rendered and the city's name<br>
 <h3>Dependencies:</h3>
 <ul>
    <li>Pandas</li>
