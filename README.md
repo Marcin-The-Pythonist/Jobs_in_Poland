@@ -12,4 +12,4 @@
 </ul>
 
 ### Example output plot:<br>
-<img src="https://media.licdn.com/dms/image/D4D22AQFnE3PN27bhaA/feedshare-shrink_1280/0/1711915051623?e=1721865600&v=beta&t=eHdi23Sj29cYoOxvXczDk28TRPrkDTOmcMPElLnOukg">
+<img src="https://media.licdn.com/dms/image/v2/D4D22AQFnE3PN27bhaA/feedshare-shrink_1280/feedshare-shrink_1280/0/1711915051623?e=1728518400&v=beta&t=NwZ_HquzBKJX9wOkPqbmZXwUc2ioMzL9gIx0EVSAD_U">
