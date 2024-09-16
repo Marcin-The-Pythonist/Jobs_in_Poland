@@ -14,4 +14,4 @@ Run the run.py file followed by two arguments: The language in which the plot wi
 </ul>
 
 ### Example output plot:<br>
-[![Jobs-in-Warszawa.png](https://i.postimg.cc/LsVkxppB/Jobs-in-Warszawa.png)](https://postimg.cc/KKRgYC4R)
+![Jobs-in-Warszawa.png](https://i.postimg.cc/LsVkxppB/Jobs-in-Warszawa.png)](https://postimg.cc/KKRgYC4R)
