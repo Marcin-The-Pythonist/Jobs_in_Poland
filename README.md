@@ -14,4 +14,4 @@ Run the run.py file followed by two arguments: The language in which the plot wi
 </ul>
 
 ### Example output plot:<br>
-<img src="https://media.licdn.com/dms/image/v2/D4D22AQFnE3PN27bhaA/feedshare-shrink_1280/feedshare-shrink_1280/0/1711915051623?e=1728518400&v=beta&t=NwZ_HquzBKJX9wOkPqbmZXwUc2ioMzL9gIx0EVSAD_U">
+<img src="[![Jobs-in-Warszawa.png](https://i.postimg.cc/LsVkxppB/Jobs-in-Warszawa.png)](https://postimg.cc/KKRgYC4R)">
