@@ -1,1 +1,5 @@
-
+Pandas
+Seaborn
+matplotlib
+requests
+beautifulsoup
