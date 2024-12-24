@@ -4,6 +4,7 @@
 2. Call the function with 2 arguments: The language in which the plot will be rendered and the city's name.<br>
 <h3>In the Command Prompt</h3>
 Run the run.py file followed by two arguments: The language in which the plot will be rendered and the city's name.<br>   A whitespace must separate arguments. Please don't use a comma. 
+<hr>
 <h3>Dependencies📖</h3>
 <ul>
    <li>Pandas</li>
