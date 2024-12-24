@@ -161,5 +161,5 @@ additional job"""
 
             df.to_csv('Praca_w_Gryfinie.csv')
     except:
-        print("Make sure you have enter a proper city name.")
+        print("Make sure you have entered a proper city name.")
   
